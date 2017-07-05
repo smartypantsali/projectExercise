@@ -1,0 +1,66 @@
+﻿@model Exercise.Models.Keyword
+
+@{
+    ViewBag.Title = "Add new exercise to database";
+}
+
+<h2>Add new exercise to database</h2>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal addclass">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label class="control-label col-md-2"> Image Url</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Picture, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2"> Exercise Name</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Exercise, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Exercise, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Instructions, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Instructions, new { htmlAttributes = new { @class = "form-control"} } )
+                <div>
+                    @Html.ValidationMessageFor(model => model.Instructions, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2"> Body Part</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BodyPart, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BodyPart, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-11">
+                <input class="btn btn-primary" type="submit" value="Create Exercise" />
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+
+    </div>
+
+}
+
+<br />
+<hr />
+
+

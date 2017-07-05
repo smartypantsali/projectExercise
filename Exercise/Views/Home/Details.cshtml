@@ -1,0 +1,56 @@
+﻿@model Exercise.Models.Keyword
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<hr />
+<div class="detailsclass">
+
+    <div class="col-md-1">
+        <br /> <br />
+        <img src="@Url.Content(Model.Picture)" height="200" />
+    </div>
+    <div class="col-md-offset-5">
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(w => w.Exercise):
+            </dt>
+            <dd>
+                @Html.DisplayFor(w => w.Exercise) <br /> <br />
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(w => w.Instructions):
+            </dt>
+            <dd>
+                @Html.DisplayFor(w => w.Instructions) <br /> <br />
+            </dd>
+            <dt>
+                Body Part:
+            </dt>
+            <dd>
+                @Html.DisplayFor(w => w.BodyPart) <br /> <br />
+            </dd>
+            <dt>
+                Likes:
+            </dt>
+            <dd>
+                @Html.DisplayFor(w => w.Blike)
+            </dd>
+            <dt>
+                Dislikes:
+            </dt>
+            <dd>
+                @Html.DisplayFor(w => w.Bdislike)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }, new { @class = "btn btn-default" })
+        &nbsp;
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+    </div>
+</div>
+<hr />

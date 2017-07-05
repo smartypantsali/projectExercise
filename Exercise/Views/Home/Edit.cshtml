@@ -1,0 +1,68 @@
+﻿@model Exercise.Models.Keyword
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<hr />
+
+<div class="form-horizontal editclass">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <label class="control-label col-md-2"> Picture URL</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Picture, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Exercise, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Exercise, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Exercise, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Instructions, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Instructions, new { htmlAttributes = new { @class = "form-control"} })
+                <div>
+                    @Html.ValidationMessageFor(model => model.Instructions, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2"> Body Part</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BodyPart, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BodyPart, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        //Code to save likes and dislikes so it doesn't reset
+
+        <div style="display:none;">
+            @Html.EditorFor(model => model.Blike, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Bdislike, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+
+        //End
+
+        <div class="col-md-offset-1 col-md-11">
+            <input class="btn btn-primary" type="submit" value="Save Changes" />
+            @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+        </div>
+       
+    }
+   
+</div>
+<hr />

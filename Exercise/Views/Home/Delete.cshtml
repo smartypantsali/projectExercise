@@ -1,0 +1,31 @@
+﻿@model Exercise.Models.Keyword
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Are you sure you want to delete this field?</h2>
+<hr />
+
+<div class="deleteclass">
+
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(w => w.Exercise):
+        </dt>
+        <dd>
+            @Html.DisplayFor(w => w.Exercise)
+        </dd>
+
+    </dl>
+    @using (Html.BeginForm())
+    {
+
+        <input class="btn btn-danger" type="submit" value="Delete Record" />
+        <span class="btn btn-default">
+            @Html.ActionLink("Cancel", "Index")
+        </span>
+    }
+
+</div>
+<hr />

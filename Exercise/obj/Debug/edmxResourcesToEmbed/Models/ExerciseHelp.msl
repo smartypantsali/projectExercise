@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WorkoutModelStoreContainer" CdmEntityContainer="WorkoutEntities">
+    <EntitySetMapping Name="Keywords">
+      <EntityTypeMapping TypeName="WorkoutModel.Keyword">
+        <MappingFragment StoreEntitySet="Keywords">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="Exercise" ColumnName="Exercise" />
+          <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+          <ScalarProperty Name="BodyPart" ColumnName="BodyPart" />
+          <ScalarProperty Name="Blike" ColumnName="Blike" />
+          <ScalarProperty Name="Bdislike" ColumnName="Bdislike" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

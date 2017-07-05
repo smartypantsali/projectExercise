@@ -1,0 +1,91 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.btn-defaults {
+    font-size:0.3em;
+    color: white;
+    background-color: darkred;
+    border-color: #adadad;
+}
+
+.btn-defaults:hover {
+    color: white;
+    background-color: firebrick;
+
+}
+
+textarea {
+    min-height: 140px;
+    width: 580px;
+}
+
+.editclass {
+    box-shadow: 10px 10px 5px 0 rgba(0,0,0,.75) !important;
+    padding: 20px 0px 60px 0px;
+    background-color: rgba(224,224,224,.8);
+}
+
+.addclass {
+    box-shadow: 10px 10px 5px 0 rgba(0,0,0,.75) !important;
+    padding: 20px 0px 10px 0px;
+    background-color: rgba(224,224,224,.8);
+}
+
+.deleteclass {
+    box-shadow: 10px 10px 5px 0 rgba(0,0,0,.75) !important;
+    padding: 0.1px 0px 20px 28px;
+    background-color: rgba(224,224,224,.8);
+}
+
+.searchbar {
+    box-shadow: 10px 10px 5px 0 rgba(0,0,0,.75) !important;
+    background-color: rgba(224,224,224,.8);
+    padding: 10px;
+}
+
+body {
+    background-image: url(../Images/background.jpg);
+    opacity: 0.9;
+    background-size: cover;
+}
+
+.body-content {
+    color: black;
+    font-size: 1.3em;
+}
+
+.table {
+    box-shadow: 10px 10px 5px 0 rgba(0,0,0,.75) !important;
+    background-color: rgba(224,224,224,.8);
+    padding: 10px;
+}
+
+.detailsclass {
+    box-shadow: 10px 10px 5px 0 rgba(0,0,0,.75) !important;
+    background-color: rgba(224,224,224,.8);
+    padding: 10px;
+}
+
+.copyrightali {
+    color: #3276b1;
+    font-weight: bold;
+}
+
+h2{
+    color:white;
+}
