@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Exercise.Models.Keyword>
+
+<script src="~/Scripts/JavaScript.js"></script>
+
+<div>
+    <h1 class="text-center"><b>Workout Exercises</b></h1>
+</div>
+
+@{
+    ViewBag.Title = "Exercise List";
+}
+
+<div class="table-responsive">
+    <div class="searchbar">
+        <p>
+            @Html.ActionLink("Add New Exercise", "Add", null, new { @class = "btn btn-default" })
+            @using (Html.BeginForm())
+            {
+            <p>
+                Body Part: @Html.DropDownList("workoutBodyPart", "All")
+                Exercise: @Html.TextBox("SearchString", null, new { style = "width: 200px" })
+                <input type="submit" value="Filter" class="btn btn-success" />
+            </p>
+
+            }
+        </div>
+    <hr />
+
+        <table class="table table-striped">
+            <tr>
+                <th class="text-center">
+                    @Html.DisplayNameFor(model => model.Picture)
+                </th>
+                <th class="text-center">
+                    @Html.DisplayNameFor(model => model.Exercise)
+                </th>
+                <th class="text-center">
+                    Body Part
+                </th>
+                <th class="text-center">
+                    Ratings
+                </th>
+                <th class="text-center">
+                    Rate Exercise
+                </th>
+                <th class="text-center">
+                    Actions
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-center">
+                        <img src="@Url.Content(item.Picture)" height="100" />
+                    </td>
+                    <td class="text-center">
+                        @Html.DisplayFor(w => item.Exercise)
+                    </td>
+                    <td class="text-center">
+                        @Html.DisplayFor(w => item.BodyPart)
+                    </td>
+                    <td class="text-center">
+                        <i class="glyphicon glyphicon-thumbs-up" style="color:forestgreen;"></i>
+                        @Html.DisplayFor(w => item.Blike)
+                        <span style="padding : 0 10px;"></span>
+                        <i class="glyphicon glyphicon-thumbs-down" style="color:red;"></i>
+                        @Html.DisplayFor(w => item.Bdislike)
+                    </td>
+
+                    <td class="text-center">
+                        <ul class="list-inline">
+                            @Html.ActionLink("Like", "Like", new { id = item.id }, new { @class = "btnCurrent btn btn-primary" })
+                            @Html.ActionLink("Dislike", "Dislike", new { id = item.id }, new { @class = "btnCurrent btn btn-default" })
+                        </ul>
+                    </td>
+                    <td class="text-center">
+                        <ul lass="list-inline">
+                            @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-default" })
+                            @Html.ActionLink("Delete Record", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                        </ul>
+
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+<hr />
