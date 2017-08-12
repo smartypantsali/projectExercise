@@ -29,14 +29,14 @@ namespace Exercise.Controllers
             var workout = from w in db.Keywords
                           select w;
 
-            //Name search
+            //Bodypart search
 
             if (!String.IsNullOrEmpty(workoutBodyPart))
             {
                 workout = workout.Where(x => x.BodyPart == workoutBodyPart);
             }
 
-            //BodyPart search
+            //Name search
             if (!String.IsNullOrEmpty(searchString))
             {
                 workout = workout.Where(ws => ws.Exercise.Contains(searchString));
